@@ -36,8 +36,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(response['message']),
           behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.green[300],
+
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(8),
           ),
           margin: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height - 100,
@@ -48,16 +50,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(response['message']),
           behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.red,
+
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(8),
           ),
           margin: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height - 100,
+              bottom: MediaQuery.of(context).size.height - 80,
               right: 20,
               left: 20),
+          // margin: EdgeInsets.only(
+          //     bottom: MediaQuery.of(context).size.height - 100,
+          //     right: 20,
+          //     left: 20
+          // ),
         ));
       }
     } catch (e) {
+      print(e);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(e.toString()),
         behavior: SnackBarBehavior.floating,

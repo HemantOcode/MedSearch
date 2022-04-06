@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:localstorage/localstorage.dart';
 
 import '../api.dart';
 
 class HomeProvider with ChangeNotifier {
+  final storage = LocalStorage('medSearch');
   static const header = {"Content-Type": "application/json"};
   List<dynamic> drugs = [];
 
@@ -26,15 +28,17 @@ class HomeProvider with ChangeNotifier {
       }
     } catch (error) {
       debugPrint(error.toString());
-      rethrow ;
+      rethrow;
     }
   }
 
-  getSearchResult(String query) {
+  getSearchResult(String query) async {
     List<dynamic> result = drugs
         .where((i) => i['medName'].toUpperCase().contains(query.toUpperCase()))
         .toList();
 
+    final existingUser = await storage.getItem('med-user');
+    print(existingUser);
     return result;
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_7/authModule/auth_provider.dart';
 import 'package:flutter_application_7/authModule/splash_screen.dart';
 import 'package:flutter_application_7/homeModule/home_provider.dart';
 import 'package:flutter_application_7/homeModule/home_screen.dart';
@@ -26,6 +27,10 @@ class _MedsearchState extends State<Medsearch> {
         providers: [
           ChangeNotifierProvider(
             create: (_) => HomeProvider(),
+          ),
+
+          ChangeNotifierProvider(
+            create: (_) => Auth(),
           ),
         ],
         child: const MaterialApp(

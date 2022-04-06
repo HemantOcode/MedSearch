@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
 
-  login()async {
+  login() async {
     setState(() {
       isLoading = true;
     });
@@ -32,8 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(response['message']),
           behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.green[300],
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(8),
           ),
           margin: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height - 100,
@@ -44,8 +45,9 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text(response['message']),
           behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.red,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(8),
           ),
           margin: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height - 100,
@@ -57,8 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(e.toString()),
         behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.red,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(8),
         ),
         margin: EdgeInsets.only(
             bottom: MediaQuery.of(context).size.height - 100,
@@ -120,9 +123,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 10.0),
                     TextButton(onPressed: () {}, child: Text("Reset Password")),
                     ElevatedButton(
-                      onPressed: isLoading?(){}:() {
-                        login();
-                      },
+                      onPressed: isLoading
+                          ? () {}
+                          : () {
+                              login();
+                            },
                       child: Text("     Login      "),
                       style: ElevatedButton.styleFrom(
                           primary: Colors.purple.shade600),

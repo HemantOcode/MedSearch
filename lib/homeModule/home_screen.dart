@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   )
                 : Text('Medsearch')),
-        actions: [
+        actions: isLoading?[]:[
           IconButton(
               onPressed: () {
                 if (isSeaching) {

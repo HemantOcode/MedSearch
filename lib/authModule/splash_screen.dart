@@ -14,7 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
   final storage = LocalStorage('medSearch');
 
   myInit() async {
-    final existingUser = await storage.getItem('medSearch');
+    final data = await storage.ready;
+    print(data);
+
+    final existingUser = await storage.getItem('med-user');
     if (existingUser != null) {
       Navigator.pushAndRemoveUntil(
           context,
