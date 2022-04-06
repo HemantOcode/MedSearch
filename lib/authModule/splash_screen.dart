@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_7/authModule/auth_provider.dart';
 import 'package:flutter_application_7/authModule/register_screen.dart';
 import 'package:flutter_application_7/homeModule/home_screen.dart';
 import 'package:localstorage/localstorage.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,7 +20,10 @@ class _SplashScreenState extends State<SplashScreen> {
     print(data);
 
     final existingUser = await storage.getItem('med-user');
+
     if (existingUser != null) {
+      Provider.of<Auth>(context, listen: false).setLastUser(existingUser);
+
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),

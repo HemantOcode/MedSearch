@@ -32,13 +32,11 @@ class HomeProvider with ChangeNotifier {
     }
   }
 
-  getSearchResult(String query) async {
+  getSearchResult(String query)  {
     List<dynamic> result = drugs
         .where((i) => i['medName'].toUpperCase().contains(query.toUpperCase()))
         .toList();
 
-    final existingUser = await storage.getItem('med-user');
-    print(json.decode(existingUser));
     return result;
   }
 }

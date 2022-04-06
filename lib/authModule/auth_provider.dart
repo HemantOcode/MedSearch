@@ -63,4 +63,9 @@ class Auth with ChangeNotifier {
       rethrow;
     }
   }
+
+  setLastUser(userDetails) {
+    currentUser = json.decode(userDetails);
+    notifyListeners();
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_7/homeModule/home_provider.dart';
+import 'package:flutter_application_7/homeModule/widgets/drawer.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -106,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(isSeaching ? Icons.clear : Icons.search))
         ],
       ),
+      drawer: AppDrawer(),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(

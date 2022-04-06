@@ -6,7 +6,6 @@ import 'package:flutter_application_7/homeModule/home_provider.dart';
 import 'package:flutter_application_7/homeModule/home_screen.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(const Medsearch());
 }
@@ -28,7 +27,6 @@ class _MedsearchState extends State<Medsearch> {
           ChangeNotifierProvider(
             create: (_) => HomeProvider(),
           ),
-
           ChangeNotifierProvider(
             create: (_) => Auth(),
           ),
@@ -36,10 +34,9 @@ class _MedsearchState extends State<Medsearch> {
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
           // home: HomeScreen(),
-        title: 'Medsearch',
+          title: 'Medsearch',
 
-
-home: SplashScreen(),
+          home: SplashScreen(),
         ));
   }
 }
