@@ -105,17 +105,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Icons.text_format,
                         color: Colors.green.shade600,
                       ))),
-              SizedBox(height: 15.0),
-              TextFormField(
-                controller: contact,
-                decoration: InputDecoration(
-                    labelText: "Contact",
-                    icon: Icon(
-                      Icons.phone,
-                      color: Colors.blue.shade600,
-                    )),
-                keyboardType: TextInputType.number,
-              ),
+              // SizedBox(height: 15.0),
+              // TextFormField(
+              //   controller: contact,
+              //   decoration: InputDecoration(
+              //       labelText: "Contact",
+              //       icon: Icon(
+              //         Icons.phone,
+              //         color: Colors.blue.shade600,
+              //       )),
+              //   keyboardType: TextInputType.number,
+              // ),
               SizedBox(
                 height: 15.0,
               ),
@@ -138,13 +138,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(
                 height: 15.0,
               ),
-              TextFormField(
-                  controller: confmpass,
-                  decoration: InputDecoration(
-                      labelText: "Confirm Password", icon: Icon(Icons.lock))),
-              SizedBox(
-                height: 25.0,
-              ),
+              // TextFormField(
+              //     controller: confmpass,
+              //     decoration: InputDecoration(
+              //         labelText: "Confirm Password", icon: Icon(Icons.lock))),
+              // SizedBox(
+              //   height: 25.0,
+              // ),
               ElevatedButton(
                 onPressed: isLoading
                     ? () {}
