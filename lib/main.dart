@@ -1,18 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_7/login.dart';
-import 'package:flutter_application_7/resetpass.dart';
-import 'package:flutter_application_7/us.dart';
-import 'register.dart';
-import 'content.dart';
-import 'notify.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_application_7/homeModule/home_provider.dart';
+import 'package:flutter_application_7/homeModule/home_screen.dart';
+import 'package:provider/provider.dart';
+
 
 void main() {
-  runApp(Medsearch());
+  runApp(const Medsearch());
 }
 
-class Medsearch extends StatelessWidget {
+class Medsearch extends StatefulWidget {
+  const Medsearch({Key? key}) : super(key: key);
+
+  @override
+  State<Medsearch> createState() => _MedsearchState();
+}
+
+class _MedsearchState extends State<Medsearch> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: content());
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => HomeProvider(),
+          ),
+        ],
+        child: const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: HomeScreen(),
+        ));
   }
 }
