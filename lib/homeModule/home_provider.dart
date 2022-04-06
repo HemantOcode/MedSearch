@@ -38,7 +38,7 @@ class HomeProvider with ChangeNotifier {
         .toList();
 
     final existingUser = await storage.getItem('med-user');
-    print(existingUser);
+    print(json.decode(existingUser));
     return result;
   }
 }
