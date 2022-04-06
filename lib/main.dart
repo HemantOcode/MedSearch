@@ -36,6 +36,8 @@ class _MedsearchState extends State<Medsearch> {
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
           // home: HomeScreen(),
+        title: 'Medsearch',
+
 
 home: SplashScreen(),
         ));
