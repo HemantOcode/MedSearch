@@ -5,4 +5,6 @@ const endPoints = {
   'searchDrugs': '/api/drugs/searchDrugs',
   'searchOtc': '/api/drugs/searchOtc',
   'fetchOtc': '/api/drugs/fetchOtc',
+  'login': '/api/user/login',
+  'register': '/api/user/register'
 };

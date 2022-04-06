@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_7/authModule/splash_screen.dart';
 import 'package:flutter_application_7/homeModule/home_provider.dart';
 import 'package:flutter_application_7/homeModule/home_screen.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,9 @@ class _MedsearchState extends State<Medsearch> {
         ],
         child: const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: HomeScreen(),
+          // home: HomeScreen(),
+
+home: SplashScreen(),
         ));
   }
 }
